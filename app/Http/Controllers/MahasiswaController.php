@@ -14,10 +14,10 @@ class MahasiswaController extends Controller
       ]);
     }
 
-    public function getOneMahasiswa($id)
+    public function getOneMahasiswa(Mahasiswa $mahasiswa)
     {
       return view('pages.mahasiswa',[
-        'mahasiswa' => Mahasiswa::find($id)
+        'mahasiswa' => $mahasiswa
       ]);
     }
 }
