@@ -18,7 +18,7 @@
           <td>{{ $mahasiswa->nama }}</td>
           <td>{{ $mahasiswa->email }}</td>
           <td>{{ $mahasiswa->jurusan }}</td>
-          <td><a href="/mahasiswas/{{ $mahasiswa->id }}">Detail</a></td>
+          <td><a href="/mahasiswas/{{ $mahasiswa->nim }}">Detail</a></td>
         </tr>
       @endforeach
     </tbody>

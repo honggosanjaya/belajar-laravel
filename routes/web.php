@@ -19,4 +19,4 @@ Route::get('/', function () {
 });
 
 Route::get('/mahasiswas', [MahasiswaController::class, 'getAllMahasiswas']);
-Route::get('/mahasiswas/{mahasiswa}', [MahasiswaController::class, 'getOneMahasiswa']);
+Route::get('/mahasiswas/{mahasiswa:nim}', [MahasiswaController::class, 'getOneMahasiswa']);
