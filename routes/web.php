@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
+use App\Http\Controllers\PembimbingController;
+use App\Models\Pembimbing;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,3 +22,5 @@ Route::get('/', function () {
 
 Route::get('/mahasiswas', [MahasiswaController::class, 'getAllMahasiswas']);
 Route::get('/mahasiswas/{mahasiswa:nim}', [MahasiswaController::class, 'getOneMahasiswa']);
+
+Route::get('/pembimbing/{pembimbing:kode_pembimbing}', [PembimbingController::class, 'getOnePembimbing']);
