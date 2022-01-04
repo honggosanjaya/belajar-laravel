@@ -23,4 +23,5 @@ Route::get('/', function () {
 Route::get('/mahasiswas', [MahasiswaController::class, 'getAllMahasiswas']);
 Route::get('/mahasiswas/{mahasiswa:nim}', [MahasiswaController::class, 'getOneMahasiswa']);
 
+Route::get('/pembimbings', [PembimbingController::class, 'getAllPembimbings']);
 Route::get('/pembimbing/{pembimbing:kode_pembimbing}', [PembimbingController::class, 'getOnePembimbing']);

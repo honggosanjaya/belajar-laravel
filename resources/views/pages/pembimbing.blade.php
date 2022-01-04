@@ -2,10 +2,10 @@
 
 @section('isiKonten')
   <h2 class="text-center text-success mb-5">Detail Pembimbing</h2>
-
-  <h4 class="fw-normal">Nama: {{ $pembimbing->nama }}</h4>
-  <h4 class="fw-normal">Kode: {{ $pembimbing->kode_pembimbing }}</h4>
-  <h4 class="fw-normal">Murid bimbingan:</h4>
+  <hr>
+  <h5 class="fw-normal">Nama: {{ $pembimbing->nama }}</h5>
+  <h5 class="fw-normal">Kode: {{ $pembimbing->kode_pembimbing }}</h5>
+  <h5 class="fw-normal">Murid bimbingan:</h5>
 
   <ul>
     @foreach ($mahasiswas as $mahasiswa)

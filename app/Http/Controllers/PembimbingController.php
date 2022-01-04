@@ -7,6 +7,12 @@ use Illuminate\Http\Request;
 
 class PembimbingController extends Controller
 {
+    public function getAllPembimbings()
+    {
+      return view('pages.pembimbings',[
+        'pembimbings' => Pembimbing::all(),
+      ]);
+    }
     public function getOnePembimbing(Pembimbing $pembimbing)
     {
       return view('pages.pembimbing',[

@@ -13,6 +13,9 @@
         <li class="nav-item">
           <a class="nav-link" href="/mahasiswas">Mahasiswa</a>
         </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/pembimbings">Pembimbing</a>
+        </li>
       </ul>
     </div>
   </div>

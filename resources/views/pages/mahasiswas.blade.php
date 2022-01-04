@@ -5,7 +5,7 @@
   <table class="table">
     <thead>
       <tr>
-        <th scope="col">ID</th>
+        <th scope="col">NIM</th>
         <th scope="col">Nama</th>
         <th scope="col">Email</th>
         <th scope="col">Jurusan</th>
@@ -14,7 +14,7 @@
     <tbody>
       @foreach ($mahasiswas as $mahasiswa)
         <tr>
-          <td>{{ $mahasiswa->id }}</td>
+          <td>{{ $mahasiswa->nim }}</td>
           <td>{{ $mahasiswa->nama }}</td>
           <td>{{ $mahasiswa->email }}</td>
           <td>{{ $mahasiswa->jurusan }}</td>
