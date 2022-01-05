@@ -25,6 +25,10 @@
             <h5>{{ $mahasiswa->pembimbing->nama }}</h5>
           </a>
         </div>
+        <div class="d-flex justify-content-between">
+          <h5 class="fw-normal">Fakultas:</h5>
+          <h5>{{ $mahasiswa->fakultas->nama }}</h5>
+        </div>
       </div>
       <a href="/mahasiswas">Lihat Seluruh Daftar Mahasiswa</a>
     </div>

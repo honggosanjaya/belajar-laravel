@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Fakultas;
 use App\Models\Pembimbing;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -18,4 +19,10 @@ class Mahasiswa extends Model
     {
       return $this->belongsTo(Pembimbing::class);
     }
+
+    public function fakultas()
+    {
+      return $this->belongsTo(Fakultas::class);
+    }
+
 }
