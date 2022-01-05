@@ -20,7 +20,6 @@ class CreateMahasiswasTable extends Migration
             $table->string('nim')->unique();
             $table->string('nama');
             $table->string('email');
-            $table->string('jurusan');
             $table->timestamps();
         });
     }
