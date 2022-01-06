@@ -1,8 +1,10 @@
 <?php
 
+use App\Http\Controllers\LoginController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MahasiswaController;
 use App\Http\Controllers\PembimbingController;
+use App\Http\Controllers\RegisterController;
 use App\Models\Pembimbing;
 
 /*
@@ -20,16 +22,14 @@ Route::get('/', function () {
     return view('pages.home');
 });
 
-Route::get('/register', function () {
-  return view('pages.auth.register');
-});
+Route::get('/register', [RegisterController::class, 'index']);
+Route::post('/register', [RegisterController::class, 'store']);
 
-Route::get('/login', function () {
-  return view('pages.auth.login');
-});
+Route::get('/login', [LoginController::class, 'index']);
 
 Route::get('/mahasiswas', [MahasiswaController::class, 'getAllMahasiswas']);
 Route::get('/mahasiswas/{mahasiswa:nim}', [MahasiswaController::class, 'getOneMahasiswa']);
 
 Route::get('/pembimbings', [PembimbingController::class, 'getAllPembimbings']);
 Route::get('/pembimbing/{pembimbing:kode_pembimbing}', [PembimbingController::class, 'getOnePembimbing']);
+
