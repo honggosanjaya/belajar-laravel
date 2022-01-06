@@ -27,9 +27,13 @@
           <td>
             {{-- jika mau pencarian berdasarkan nim --}}
             {{-- <a href="/dashboard/mahasiswa/{{ $mahasiswa->nim }}">Detail</a> --}}
-            <a href="/dashboard/mahasiswa/{{ $mahasiswa->id }}">Detail</a>
-            <a href="/dashboard/mahasiswa/{{ $mahasiswa->id }}/edit">Edit</a>
-            <a href="">Delete</a>
+            <a href="/dashboard/mahasiswa/{{ $mahasiswa->id }}" class="btn btn-success d-block">Detail</a>
+            <a href="/dashboard/mahasiswa/{{ $mahasiswa->id }}/edit" class="btn btn-warning d-block my-2">Edit</a>
+            <form action="/dashboard/mahasiswa/{{ $mahasiswa->id }}" method="POST">
+              @method('delete')
+              @csrf
+              <button type="submit" class="btn btn-danger w-100">Delete</button>
+            </form>
           </td>
         </tr>
       @endforeach

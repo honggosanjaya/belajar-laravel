@@ -124,7 +124,6 @@ class DashboardCRUDMahasiswa extends Controller
     public function destroy($id)
     {
       Mahasiswa::destroy('id', $id);
-
-      return redirect('/dashboard/mahasiswa') -> with('successMessage', 'Berhasil mengubah data mahasiswa');
+      return redirect('/dashboard/mahasiswa') -> with('successMessage', 'Berhasil menghapus data mahasiswa');
     }
 }
