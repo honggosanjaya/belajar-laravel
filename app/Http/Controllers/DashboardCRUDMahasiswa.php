@@ -89,17 +89,27 @@ class DashboardCRUDMahasiswa extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Mahasiswa $mahasiswa)
     {
-      $validatedData = $request->validate([
+      $validasi = ([
         'pembimbing_id' => 'required',
         'fakultas_id' => 'required',
-        'nim' => 'required|unique:mahasiswas',
         'nama' => 'required',
-        'email' => 'required|unique:mahasiswas',
       ]);
 
-      Mahasiswa::where('id', $id)
+      if($request->nim !== $mahasiswa->nim)
+      {
+        $validasi['nim'] = 'required|unique:mahasiswas';
+      }
+
+      if($request->email !== $mahasiswa->email)
+      {
+        $validasi['email'] = 'required|unique:mahasiswas';
+      }
+
+      $validatedData = $request->validate($validasi);
+
+      Mahasiswa::where('id', $mahasiswa->id)
             ->update($validatedData);
 
       return redirect('/dashboard/mahasiswa') -> with('successMessage', 'Berhasil mengubah data mahasiswa');
