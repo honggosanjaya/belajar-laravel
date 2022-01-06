@@ -9,7 +9,8 @@
 
   <ul>
     @foreach ($mahasiswas as $mahasiswa)
-      <li><a href="/mahasiswas/{{ $mahasiswa->nim }}">{{ $mahasiswa->nim }}</a></li>
+      <li><a href="/dashboard/mahasiswa/{{ $mahasiswa->id }}" class="text-decoration-none">{{ $mahasiswa->nim }} -
+          {{ $mahasiswa->nama }}</a></li>
     @endforeach
   </ul>
 @endsection
