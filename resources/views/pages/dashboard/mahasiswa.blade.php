@@ -28,7 +28,7 @@
             {{-- jika mau pencarian berdasarkan nim --}}
             {{-- <a href="/dashboard/mahasiswa/{{ $mahasiswa->nim }}">Detail</a> --}}
             <a href="/dashboard/mahasiswa/{{ $mahasiswa->id }}">Detail</a>
-            <a href="">Edit</a>
+            <a href="/dashboard/mahasiswa/{{ $mahasiswa->id }}/edit">Edit</a>
             <a href="">Delete</a>
           </td>
         </tr>

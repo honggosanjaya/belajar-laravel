@@ -73,9 +73,13 @@ class DashboardCRUDMahasiswa extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($id)
+    public function edit(Mahasiswa $mahasiswa)
     {
-        //
+      return view('pages/dashboard/editMahasiswa',[
+        'mahasiswa' => $mahasiswa,
+        'pembimbings' => Pembimbing::all(),
+        'fakultases' => Fakultas::all()
+      ]);
     }
 
     /**
@@ -87,7 +91,18 @@ class DashboardCRUDMahasiswa extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+      $validatedData = $request->validate([
+        'pembimbing_id' => 'required',
+        'fakultas_id' => 'required',
+        'nim' => 'required|unique:mahasiswas',
+        'nama' => 'required',
+        'email' => 'required|unique:mahasiswas',
+      ]);
+
+      Mahasiswa::where('id', $id)
+            ->update($validatedData);
+
+      return redirect('/dashboard/mahasiswa') -> with('successMessage', 'Berhasil mengubah data mahasiswa');
     }
 
     /**
@@ -98,6 +113,8 @@ class DashboardCRUDMahasiswa extends Controller
      */
     public function destroy($id)
     {
-        //
+      Mahasiswa::destroy('id', $id);
+
+      return redirect('/dashboard/mahasiswa') -> with('successMessage', 'Berhasil mengubah data mahasiswa');
     }
 }
