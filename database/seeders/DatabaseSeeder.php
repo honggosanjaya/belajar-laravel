@@ -35,6 +35,6 @@ class DatabaseSeeder extends Seeder
 
       Fakultas::factory(3)->create();
       Pembimbing::factory(3)->create();
-      Mahasiswa::factory(30)->create();
+      Mahasiswa::factory(10)->create();
     }
 }

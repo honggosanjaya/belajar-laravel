@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Mahasiswa;
+use App\Models\Pembimbing;
+use App\Models\Fakultas;
 
 class DashboardCRUDMahasiswa extends Controller
 {
@@ -26,7 +28,10 @@ class DashboardCRUDMahasiswa extends Controller
      */
     public function create()
     {
-        //
+      return view('pages/dashboard/addMahasiswa',[
+        'pembimbings' => Pembimbing::all(),
+        'fakultases' => Fakultas::all()
+      ]);
     }
 
     /**
@@ -37,7 +42,16 @@ class DashboardCRUDMahasiswa extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $validatedData = $request->validate([
+          'pembimbing_id' => 'required',
+          'fakultas_id' => 'required',
+          'nim' => 'required|unique:mahasiswas',
+          'nama' => 'required',
+          'email' => 'required|unique:mahasiswas',
+        ]);
+
+        Mahasiswa::create($validatedData);
+        return redirect('/dashboard/mahasiswa') -> with('successMessage', 'Berhasil menambhakna mahasiswa');
     }
 
     /**

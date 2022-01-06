@@ -1,7 +1,14 @@
 @extends('layouts/mainTemplate')
 
 @section('isiKonten')
+  @if (session()->has('successMessage'))
+    <div class="alert alert-success" role="alert">
+      {{ session('successMessage') }}
+    </div>
+  @endif
+
   <h2 class="text-center text-success">Seluruh Mahasiswa</h2>
+  <a href="/dashboard/mahasiswa/create">Add Mahasiswa</a>
   <table class="table">
     <thead>
       <tr>
