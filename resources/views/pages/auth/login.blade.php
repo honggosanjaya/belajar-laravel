@@ -9,16 +9,34 @@
         </div>
       @endif
 
-      <form action="">
+      @if (session()->has('errorMessage'))
+        <div class="alert alert-danger" role="alert">
+          {{ session('errorMessage') }}
+        </div>
+      @endif
+
+      <form action="/login" method="POST">
         @csrf
         <div class="mb-3">
           <label for="email" class="form-label">Email address</label>
-          <input type="email" class="form-control" id="email" name="email" placeholder="name@example.com">
+          <input type="email" class="form-control @error('email') is-invalid @enderror" id="email" name="email"
+            placeholder="name@example.com">
+          @error('email')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+          @enderror
         </div>
 
         <div class="mb-3">
           <label for="password" class="form-label">Password</label>
-          <input type="password" class="form-control" id="password" name="password">
+          <input type="password" class="form-control @error('password') is-invalid @enderror" id="password"
+            name="password">
+          @error('password')
+            <div class="invalid-feedback">
+              {{ $message }}
+            </div>
+          @enderror
         </div>
 
         <button class="w-100 btn btn-primary" type="submit">Login</button>
