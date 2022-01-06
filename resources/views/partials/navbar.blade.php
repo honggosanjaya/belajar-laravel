@@ -9,29 +9,32 @@
       <ul class="navbar-nav">
         @auth
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
+            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/mahasiswas">Mahasiswa</a>
+            <a class="nav-link {{ Request::is('dashboard/mahasiswa*') ? 'active' : '' }}"
+              href="/dashboard/mahasiswa">Mahasiswa</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/pembimbings">Pembimbing</a>
+            <a class="nav-link {{ Request::is('pembimbings') ? 'active' : '' }}" href="/pembimbings">Pembimbing</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {{ Request::is('dashboard') ? 'active' : '' }}" href="/dashboard">Dashboard</a>
           </li>
           <li class="nav-item">
             <form action="/logout" method="POST">
               @csrf
-              <button tyoe="submit" class="nav-link">LOGOUT</button>
+              <button type="submit" class="btn btn-danger">LOGOUT</button>
             </form>
           </li>
         @else
           <li class="nav-item">
-            <a class="nav-link" aria-current="page" href="/">Home</a>
+            <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" aria-current="page" href="/">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/login">LOGIN</a>
+            <a class="nav-link {{ Request::is('login') ? 'active' : '' }}" href="/login">LOGIN</a>
           </li>
         @endauth
-
       </ul>
     </div>
   </div>

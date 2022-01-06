@@ -30,7 +30,7 @@
           <h5>{{ $mahasiswa->fakultas->nama }}</h5>
         </div>
       </div>
-      <a href="/mahasiswas">Lihat Seluruh Daftar Mahasiswa</a>
+      <a href="/dashboard/mahasiswa">Lihat Seluruh Daftar Mahasiswa</a>
     </div>
   </div>
 

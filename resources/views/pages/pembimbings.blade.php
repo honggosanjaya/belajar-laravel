@@ -7,7 +7,7 @@
       <tr>
         <th scope="col">Kode Pembimbing</th>
         <th scope="col">Nama</th>
-        <th scope="col">Email</th>
+        <th scope="col">Aksi</th>
       </tr>
     </thead>
     <tbody>

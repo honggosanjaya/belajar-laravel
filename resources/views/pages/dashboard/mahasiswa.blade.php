@@ -8,7 +8,7 @@
         <th scope="col">NIM</th>
         <th scope="col">Nama</th>
         <th scope="col">Email</th>
-        <th scope="col">Jurusan</th>
+        <th scope="col">Aksi</th>
       </tr>
     </thead>
     <tbody>
@@ -17,8 +17,13 @@
           <td>{{ $mahasiswa->nim }}</td>
           <td>{{ $mahasiswa->nama }}</td>
           <td>{{ $mahasiswa->email }}</td>
-          <td>{{ $mahasiswa->jurusan }}</td>
-          <td><a href="/mahasiswas/{{ $mahasiswa->nim }}">Detail</a></td>
+          <td>
+            {{-- jika mau pencarian berdasarkan nim --}}
+            {{-- <a href="/dashboard/mahasiswa/{{ $mahasiswa->nim }}">Detail</a> --}}
+            <a href="/dashboard/mahasiswa/{{ $mahasiswa->id }}">Detail</a>
+            <a href="">Edit</a>
+            <a href="">Delete</a>
+          </td>
         </tr>
       @endforeach
     </tbody>

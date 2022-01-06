@@ -25,4 +25,9 @@ class Mahasiswa extends Model
       return $this->belongsTo(Fakultas::class);
     }
 
+    // jika mau pencarian berdasarkan nim
+    // public function getRouteKeyName()
+    // {
+    //     return 'nim';
+    // }
 }
